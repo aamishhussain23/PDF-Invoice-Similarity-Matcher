@@ -3,6 +3,7 @@ from PyPDF2 import PdfReader
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import os
 
 def extract_text_from_pdf(file_path):
     with open(file_path, 'rb') as file:
@@ -44,16 +45,16 @@ def add_invoice_to_database(pdf_path, database):
 
 if __name__ == "__main__":
 
-    # add_invoice_to_database('invoice1.pdf', database)
-    add_invoice_to_database('invoice2.pdf', database)
-    add_invoice_to_database('invoice3.pdf', database)
-    add_invoice_to_database('invoice4.pdf', database)
-    add_invoice_to_database('invoice5.pdf', database)
-    add_invoice_to_database('invoice6.pdf', database)
-    add_invoice_to_database('invoice7.pdf', database)
+    add_invoice_to_database('pdfs/invoice1.pdf', database)
+    add_invoice_to_database('pdfs/invoice2.pdf', database)
+    add_invoice_to_database('pdfs/invoice3.pdf', database)
+    add_invoice_to_database('pdfs/invoice4.pdf', database)
+    add_invoice_to_database('pdfs/invoice5.pdf', database)
+    add_invoice_to_database('pdfs/invoice6.pdf', database)
+    add_invoice_to_database('pdfs/invoice7.pdf', database)
     
-    input_invoice = 'invoice1.pdf'
+    input_invoice = 'pdfs/invoice1.pdf'
     most_similar_invoice, similarity_score = find_most_similar_invoice(input_invoice, database)
     
-    print(f"The most similar invoice is: {most_similar_invoice}")
+    print(f"The most similar invoice is: {os.path.basename(most_similar_invoice)}")
     print(f"Similarity score: {similarity_score}")
