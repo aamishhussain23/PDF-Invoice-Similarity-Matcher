@@ -8,6 +8,7 @@ This project is a Python program that compares PDF invoices and finds the most s
 - PyPDF2
 - scikit-learn
 - numpy
+- os
 
 ## Installation
 
