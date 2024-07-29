@@ -19,7 +19,7 @@ pip install PyPDF2 scikit-learn numpy
 
 ## How to Run
 
-- Place your PDF invoices ```(invoice1.pdf, invoice2.pdf, etc.)``` in the same directory as the script.
+- Place your PDF invoices ```(invoice1.pdf, invoice2.pdf, etc.)``` in the pdfs directory.
 
 - Modify the ```input_invoice``` variable in the main function to point to the invoice you want to compare.
 
